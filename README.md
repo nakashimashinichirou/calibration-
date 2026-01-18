@@ -30,7 +30,6 @@
 ├── calibration.py     # カメラパラメータ推定
 ├── tracker.py         # 2Dトラッキングツール
 ├── animation.py     # 3D復元・可視化
-├── requirements.txt   # 依存ライブラリ
 ├── data/              # 動画・CSVデータ保存先
 ├── calibration_data/  # キャリブレーション用画像置き場
 ├── system_matrices/   # 計算されたパラメータ出力先
