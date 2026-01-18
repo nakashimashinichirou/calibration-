@@ -11,17 +11,15 @@
 
 ## Features
 
-* **Synchronization (`sync_manager.py`)**: 複数カメラの動画開始位置をフレーム単位で同期し、連番画像を生成。
-* **Calibration (`calibration.py`)**: ChArUcoボードを用いてカメラの内部パラメータ・外部パラメータ（位置関係）を推定。
-* **2D Tracking (`tracker.py`)**: 同期された映像上で関節位置を追跡（CSRT Tracker + 手動修正UI）。
-* **3D Reconstruction (`reconstruct.py`)**: 
-    * 多視点三角測量による3D座標計算。
-    * OneEuroFilterによる時系列データのスムージング（ジッター除去）。
+* **データ作成(`sync_manager.py`)**: 複数カメラの動画開始位置をフレーム単位で同期し、連番画像を生成。
+* **カメラ間のキャリブレーション (`calibration.py`)**: ChArUcoボードを用いてカメラの内部パラメータ・外部パラメータ（位置関係）を推定。
+* **関節のトラッキング (`tracker.py`)**: 同期された映像上で関節位置を追跡（CSRT Tracker + 手動修正UI）。
+* **3D化 (`reconstruct.py`)**: 
     * 3D骨格アニメーションの可視化。
 
 ## Environment (uv Recommended)
 
-パッケージ管理には `uv` を使用しています。以下の手順で高速に環境を構築可能です。
+パッケージ管理には `uv` を使用しています。
 
 
 ## File Structure
