@@ -1,3 +1,10 @@
+はい、先ほどのフォーマットに合わせつつ、**システム構成図（Architecture）** と **`uv` による環境構築** を反映したバージョンです。
+
+これをコピーして `README.md` に貼り付けてください。
+
+---
+
+```markdown
 # Multi-View 3D Motion Capture System
 
 市販のカメラ（スマホ等）を複数台用いて、動画の同期から3D骨格復元までを行う自家製モーションキャプチャシステムです。
@@ -32,3 +39,75 @@ curl -LsSf [https://astral.sh/uv/install.sh](https://astral.sh/uv/install.sh) | 
 # 仮想環境の作成と有効化
 uv venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+```
+
+### 2. Install Dependencies
+
+依存ライブラリを一括インストールします。
+
+```bash
+uv pip install -r requirements.txt
+
+```
+
+## Usage Workflow
+
+図のフローに従って順番に実行します。
+
+### Phase 1: Preparation
+
+動画の同期と画像切り出しを行います。
+
+```bash
+python sync_manager.py
+
+```
+
+### Phase 2: Calibration
+
+カメラの位置関係（外部パラメータ）を計算します。
+
+```bash
+python calibration.py
+
+```
+
+### Phase 3: 2D Tracking
+
+動画上で対象人物の関節をトラッキングし、2D座標を取得します。
+
+```bash
+python tracker.py
+
+```
+
+### Phase 4: 3D Reconstruction
+
+2D座標とカメラパラメータから3D座標を復元し、結果を描画します。
+
+```bash
+python reconstruct.py
+
+```
+
+## File Structure
+
+```text
+.
+├── sync_manager.py    # 動画同期・前処理
+├── calibration.py     # カメラパラメータ推定
+├── tracker.py         # 2Dトラッキングツール
+├── reconstruct.py     # 3D復元・可視化
+├── architecture.png   # システム構成図
+├── requirements.txt   # 依存ライブラリ
+├── data/              # 動画・CSVデータ保存先
+├── calibration_data/  # キャリブレーション用画像置き場
+├── system_matrices/   # 計算されたパラメータ出力先
+└── README.md          # ドキュメント
+
+```
+
+```
+
+```
