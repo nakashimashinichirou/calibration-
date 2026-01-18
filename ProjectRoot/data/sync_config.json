@@ -1,0 +1,18 @@
+{
+    "pixel": {
+        "offset_frame": 3715,
+        "video_path": "/home/shinichirou/Desktop/douki/21\u56de\u76ee/pixel.mp4"
+    },
+    "oppo": {
+        "offset_frame": 1964,
+        "video_path": "/home/shinichirou/Desktop/douki/21\u56de\u76ee/oppo.mp4"
+    },
+    "oppo1": {
+        "offset_frame": 1212,
+        "video_path": "/home/shinichirou/Desktop/douki/21\u56de\u76ee/oppo1.mp4"
+    },
+    "oppo2": {
+        "offset_frame": 2971,
+        "video_path": "/home/shinichirou/Desktop/douki/21\u56de\u76ee/oppo2.mp4"
+    }
+}
